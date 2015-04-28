@@ -27,3 +27,5 @@ define service {
 ```
 
 **NOTE**: the paths may vary, depending on your Nagios/Icinga installation.
+
+**NOTE**: You probably want to install it as NRPE check instead if Nagios and Bacula run on different machines.
