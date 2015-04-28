@@ -33,7 +33,7 @@ use lib '/usr/lib/nagios/plugins';
 use utils qw(%ERRORS &print_revision &support);
 
 my $PROGNAME = "check_bacula_log";
-my $REVISION = '$Revision$';
+my $VERSION = '1.8';
 
 sub print_help();
 sub print_usage();
@@ -63,7 +63,7 @@ my $status = GetOptions(
 
 # Version
 if ($opt{V}) {
-	print_revision($PROGNAME, $REVISION);
+	print_revision($PROGNAME, $VERSION);
 	exit $ERRORS{'OK'};
 }
 
@@ -189,9 +189,9 @@ sub print_usage() {
 }
 
 sub print_help() {
-	print_revision($PROGNAME, $REVISION);
+	print_revision($PROGNAME, $VERSION);
 	print "Copyright (c) 2005 Guy Van Sanden\n";
-	print "Copyright (c) 2010 Elan Ruusamäe <glen\@delfi.ee>\n";
+	print "Copyright (c) 2010 Elan Ruusamäe <glen\@pld-linux.org>\n";
 	print "\n";
 	print_usage();
 	print "Checks todays backups of the Bacula system
