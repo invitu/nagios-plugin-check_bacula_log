@@ -23,17 +23,21 @@
 # Nagios NRPE) would be able to access the log. For example:
 # setfacl -m g:nagcmd:r-x /var/log/bacula
 # setfacl -m g:nagcmd:r-- /var/log/bacula/log
+# Setup your locale in which bacula log are (ie: fr_FR)
+# my $LOCALE = 'fr_FR'
 ############################################################################
 
 use strict;
 use warnings;
 use Getopt::Long;
-use POSIX qw(strftime);
+use POSIX qw(setlocale strftime);
 use lib '/usr/lib/nagios/plugins';
 use utils qw(%ERRORS &print_revision &support);
 
 my $PROGNAME = "check_bacula_log";
-my $VERSION = '1.8';
+my $VERSION = '1.8.1';
+my $LOCALE = 'en_US';
+setlocale(POSIX::LC_ALL,$LOCALE);
 
 sub print_help();
 sub print_usage();
